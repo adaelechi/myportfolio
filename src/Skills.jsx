@@ -4,6 +4,7 @@ import Stack from "./Stack";
 function Skills() {
     const [isCore, setIsCore] = useState(true);
     const [isFrame, setIsFrame] = useState(false);
+    const [isBaas, setIsBaas] = useState(false);
     const [isStyle, setIsStyle] = useState(false);
     const [isTool, setIsTool] = useState(false);
     const [isCreate, setIsCreate] = useState(false);
@@ -11,6 +12,7 @@ function Skills() {
     const coreStack = () => {
         setIsCore(true),
         setIsFrame(false),
+        setIsBaas(false),
         setIsStyle(false),
         setIsTool(false),
         setIsCreate(false)
@@ -19,6 +21,16 @@ function Skills() {
     const frameStack = () => {
         setIsCore(false),
         setIsFrame(true),
+        setIsBaas(false),
+        setIsStyle(false),
+        setIsTool(false),
+        setIsCreate(false)
+    };
+    
+    const baasStack = () => {
+        setIsCore(false),
+        setIsFrame(false),
+        setIsBaas(true),
         setIsStyle(false),
         setIsTool(false),
         setIsCreate(false)
@@ -27,6 +39,7 @@ function Skills() {
     const styleStack = () => {
         setIsCore(false),
         setIsFrame(false),
+        setIsBaas(false),
         setIsStyle(true),
         setIsTool(false),
         setIsCreate(false)
@@ -35,6 +48,7 @@ function Skills() {
     const toolStack = () => {
         setIsCore(false),
         setIsFrame(false),
+        setIsBaas(false),
         setIsStyle(false),
         setIsTool(true),
         setIsCreate(false)
@@ -43,6 +57,7 @@ function Skills() {
     const createStack = () => {
         setIsCore(false),
         setIsFrame(false),
+        setIsBaas(false),
         setIsStyle(false),
         setIsTool(false),
         setIsCreate(true)
@@ -56,6 +71,7 @@ function Skills() {
                 <div className=" content-start flex flex-col flex-wrap row-start-1 row-end-2 md:row-end-3 mb-2 md:mb-0 justify-start">
                     <button onClick={coreStack} className={isCore ? "skillbtn-active w-32 md:w-80" : "skillbtn w-32 md:w-80"}>Core</button>
                     <button onClick={frameStack} className={isFrame ? "skillbtn-active w-32 md:w-80" : "skillbtn w-32 md:w-80"}>Frameworks</button>
+                    <button onClick={baasStack} className={isBaas ? "skillbtn-active w-32 md:w-80" : "skillbtn w-32 md:w-80"}>BaaS</button>
                     <button onClick={styleStack} className={isStyle ? "skillbtn-active w-32 md:w-80" : "skillbtn w-32 md:w-80"}>Styling</button>
                     <button onClick={toolStack} className={isTool ? "skillbtn-active w-32 md:w-80" : "skillbtn w-32 md:w-80"}>Tooling</button>
                     <button onClick={createStack} className={isCreate ? "skillbtn-active w-32 md:w-80" : "skillbtn w-32 md:w-80"}>Creative</button>
@@ -63,6 +79,7 @@ function Skills() {
                 <div className=" col-start-2 col-end-3 m-2 row-start-1 row-end-2 md:h-24">
                     <Stack id='core-stack' className={isCore ? 'stack' : 'hidden'} one="HTML5" two="CSS3" three="JavaScript" four="Git"  />
                     <Stack id='framework-stack' className={isFrame ? 'stack' : 'hidden'} one="React" two=""  />
+                    <Stack id='baas-stack' className={isBaas ? 'stack' : 'hidden'} one="Supabase" two="Vercel"  />
                     <Stack id='styling-stack' className={isStyle ? 'stack' : 'hidden'} one="TailwindCSS" two="" />
                     <Stack id='tooling-stack' className={isTool ? 'stack' : 'hidden'} one="Vite" two="npm" three="ESLint" four="Prettier" />
                     <Stack id='creative-stack' className={isCreate ? 'stack' : 'hidden'} one="Figma" two="Canva" />
